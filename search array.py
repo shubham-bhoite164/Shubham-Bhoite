@@ -1,0 +1,38 @@
+a=list(map(int,input().split()))
+b=a[len(a)-1]
+ma=max(a)
+mi=min(a)
+imi=a.index(mi)
+ind=-1
+n=int(input())
+if(n<=b):
+    u=len(a)-1
+    l=imi
+    m=(u+l)//2
+    while(u>=l):
+        m=(u+l)//2
+        if(a[m]==n):
+            print(m)
+            ind=0
+            break
+        elif(n<a[m]):
+            u=m-1
+        elif(n>a[m]):
+            l=m+1
+else:
+    u=imi-1
+    l=0
+    m=(u+l)//2
+    while(u>=l):
+        m=(u+l)//2
+        if(a[m]==n):
+            print(m)
+            ind=0
+            break
+        elif(n<a[m]):
+            u=m-1
+        elif(n>a[m]):
+            l=m+1
+if(ind==-1):
+    print("Not found")
+    
